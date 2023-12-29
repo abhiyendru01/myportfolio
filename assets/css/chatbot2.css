@@ -6,9 +6,6 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-body {
-  background: #1f1f1f;
-}
 .i{
     height: max-content;
     width: max-content;
@@ -27,14 +24,14 @@ body {
   justify-content: center;
   border-radius: 50%;
   backdrop-filter: blur(9px);
-  background: #f6e5a297;
+  background: #b3a878;
   transition: all 0.2s ease;
 }
 body.show-chatbot .chatbot-toggler {
-  text-shadow: 0 0 10px #fffae4;
+  text-shadow: 0 0 10px #fff;
 }
 .chatbot-toggler:hover{
-  text-shadow: 0 0 8px #fffae4;
+  text-shadow: 0 0 8px #fff;
 }
 .chatbot-toggler span {
   color: #fff;
@@ -50,13 +47,13 @@ body.show-chatbot .chatbot-toggler span:last-child {
   opacity: 1;
 }
 .chatbot {
-  box-shadow: 0 0 6px #fffae4;
+  box-shadow: 0 0 6px #fff;
   position: fixed;
   right: 35px;
   bottom: 90px;
   width: 410px;
   backdrop-filter: blur(8px);
-  background: #50504b4e;
+  background: #37373775;
   border-radius: 15px;
   overflow: hidden;
   opacity: 0;
@@ -76,9 +73,9 @@ body.show-chatbot .chatbot {
   padding: 16px 0;
   position: relative;
   text-align: center;
-  color: #363636;
+  color: #2d2d2d;
   backdrop-filter: blur(5px);
-  background: #525252;
+  background: #222222e7;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 .chatbot header span {
@@ -90,16 +87,16 @@ body.show-chatbot .chatbot {
   transform: translateY(-50%);
 }
 header h2 {
-    color:#fdf3ca;
+    color:#f4f4f4;
     text-decoration: solid #000;
   font-size: 1.4rem;
 }
 span#send-btn{
-    color: #fffae4d6;
+    color: #fff;
 }
 span#send-btn:hover{
-  color: #fffae4;
-  text-shadow: 0 0 8px #fffae4;
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
 }
 .chatbot .chatbox {
   overflow-y: auto;
@@ -130,12 +127,12 @@ span#send-btn:hover{
 .chatbox .incoming span {
   width: 32px;
   height: 32px;
-  color: #fffae4;
+  color: #fff;
   cursor: default;
   text-align: center;
   line-height: 32px;
   align-self: flex-end;
-  background: #6e6e6e;
+  background: #444444;
   border-radius: 4px;
   margin: 0 10px 7px 0;
 }
@@ -146,10 +143,10 @@ span#send-btn:hover{
   max-width: 75%;
   font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-shadow: 0 1 1px #1f1f1f;
-  color: #1c1b17;
+  color: #fff;
   font-weight: 380;
     font-size: 16px;
-  background: #c2ba98;
+  background: #494949;
 }
 .chatbox .incoming p {
   border-radius: 10px 10px 10px 0;
@@ -162,10 +159,10 @@ span#send-btn:hover{
   background: #94101b5b;
 }
 .chatbox .incoming p {
-  color: #fffae4;
-  border: 2px solid #9e9a85e4;
+  color: #2f2f2f;
+  border: 1px solid #1e1e1ea5;
   backdrop-filter: blur(5px);
-  background: #fffae446;
+  background: #ffffffb2;
 }
 .chatbot .chat-input {
   display: flex;
@@ -174,7 +171,7 @@ span#send-btn:hover{
   bottom: 0;
   width: 100%;
   backdrop-filter: blur(5px);
-  background: #464646;
+  background: #2d2d2d;
   padding: 3px 20px;
   border-top: 1px solid #6e6e6e;
 }
@@ -183,9 +180,9 @@ span#send-btn:hover{
   background: #8b8b8b70;
   height: 55px;
   width: 100%;
-  color:#fffae4;
+  color:#fff;
   border-radius: 20px;
-  border: 1px solid #898989;
+  border: 1px solid #92929288;
   outline: none;
   resize: none;
   max-height: 180px;
@@ -193,11 +190,11 @@ span#send-btn:hover{
   font-size: 0.95rem;
 }
 .chat-input textarea::placeholder{
-    color:#fffae4ad;
+    color:#ffffff86;
 }
 .chat-input span {
   align-self: flex-end;
-  color: #c2ba98;
+  color: #edece9;
   cursor: pointer;
   height: 55px;
   display: flex;
@@ -241,7 +238,7 @@ span#send-btn:hover{
 
 }
 .bi-bi-send{
-  color:#fffae4;
+  color:#fff;
 }
   /* Style for the capture button */
   .capture-btnn {
@@ -255,9 +252,9 @@ span#send-btn:hover{
   
   /* Hover effect */
   .capture-btnn:hover {
-    background-color: #fffae420;
+    background-color: #fff20;
     color: #23211d;
-    box-shadow:0 0 10px #fffae4; 
+    box-shadow:0 0 10px #fff; 
   }
   .skilltext{
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

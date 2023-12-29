@@ -16,6 +16,8 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/chatbot.css">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
   <!--
     - google font link
@@ -407,7 +409,7 @@
 
           </ul>
 
-        </section>
+       
 
 
         <!--
@@ -473,7 +475,7 @@
 
             <li class="clients-item">
               <a href="#">
-                <img src="#" alt="client logo">
+                <img src="./assets/img/Transparent_Image_2-2.png" alt="client logo">
               </a>
             </li>
 
@@ -555,16 +557,16 @@
               <ion-icon name="book-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Experience</h3>
+            <h3 class="h3">Achievements</h3>
           </div>
 
           <ol class="timeline-list">
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Web Developer</h4>
+              <h4 class="h4 timeline-item-title"><b>Hackathon Recognition:<b></h4>
 
-              <span></span>
+              <span>Achieved a top 10 ranking out of 166 competing teams in BYTEBASH Hackathon. Led a dynamic team in conceptualizing and executing a successful.</span>
 
               <p class="timeline-text">
                 
@@ -585,11 +587,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">C++</h5>
-                <data value="80">80%</data>
+                <data value="90">90%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
+                <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
 
             </li>
@@ -611,11 +613,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">React.js</h5>
-                <data value="90">90%</data>
+                <data value="80">80%</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 90%;"></div>
+                <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
 
             </li>
@@ -1047,16 +1049,12 @@
     </div>
 
   </main>
-
-
-
-
-
-
+  
   <!--
     - custom js link
   -->
   <script src="./assets/js/scripts.js"></script>
+  <script src="./assets/js/chatbot.js"></script>
   <script src="./script.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -1067,6 +1065,29 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+</body>
+<body>
+  <button class="chatbot-toggler">
+    <span class="chat"><i class="bi bi-chat" height="30px" width="40px"></i></span>
+    <span class="material-symbols-outlined"><i class="bi bi-x-lg"></i></span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Rahul's Chatbot</h2>
+      <span class="close-btn material-symbols-outlined"><i class="bi bi-x-lg"></i></span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="profile"><img src="./assets/img/logo4.png" width="30px" height="30px"></span></img>
+        <p>Hii 👋 ,I'm Rahul<br>How can I help you today?</p>
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="ask me something..." spellcheck="false" required></textarea>
+     <!--   <span id="send-btn" class="capture-btnn">send</span>-->
+      <span id="send-btn" class=""><i class="bi bi-send"></i></span>
+    </div>
+  </div>
 </body>
 
 </html>

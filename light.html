@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/chatbot2.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Rahul's PortFolio
@@ -47,8 +48,7 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link  scrollto" href="#">Portfolio</a></li>
-          <li><a class="nav-link  scrollto" href="#">Skills</a></li>
+          <li><a class="nav-link  scrollto" href="portfolio.html">Resume</a></li>
           <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="https://wiptest.netlify.app/">WebinPost</a></li>
@@ -115,7 +115,7 @@
                             </div>
             <br>
             <a href="#">
-            <button href="#" class="capture-btn">know more</button>
+            <button href="portfolio.html" class="capture-btn">know more</button>
             </a>
 
           </div>
@@ -533,8 +533,28 @@
 
     </div>
   </div><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chat"></i></a>
+  <button class="chatbot-toggler">
+    <span class="chat"><i class="bi bi-chat" height="30px" width="40px"></i></span>
+    <span class="material-symbols-outlined"><i class="bi bi-x-lg"></i></span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Rahul's Chatbot</h2>
+      <span class="close-btn material-symbols-outlined"><i class="bi bi-x-lg"></i></span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="profile"><img src="./assets/img/logo4.png" width="30px" height="30px"></span></img>
+        <p>Hii 👋 ,I'm Rahul<br>send <b>'hii'</b> to start a chat</p>
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="ask me something..." spellcheck="false" required></textarea>
+     <!--   <span id="send-btn" class="capture-btnn">send</span>-->
+      <span id="send-btn" class="btnn"><i class="bi bi-send"></i></span>
+    </div>
+  </div>
+  
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -551,6 +571,7 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="script.js"></script>
+  <script src="./assets/js/chatbot.js"></script>
 
 </body>
 

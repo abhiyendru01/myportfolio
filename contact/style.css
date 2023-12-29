@@ -39,7 +39,8 @@ body{
 .field .item{
     width: 100%;
     padding: 18px;
-    background: rgba(42, 42, 42, 0.475);
+    background: rgba(45, 45, 45, 0.615);
+    backdrop-filter: blur(1px);
     border: 2px solid #020202;
     font-size: 16px;
     color: #fffae4;
@@ -59,7 +60,7 @@ body{
     margin:12px 0;
 }
 .field .item::placeholder{
-    color:#fffae4;
+    color:#c6c5c0b4;
 }
 form .textarea-field .item{
     resize:none;
@@ -67,10 +68,10 @@ form .textarea-field .item{
 form button{
     padding: 12px 32px;
     background: #02020273;
+    backdrop-filter: blur(2px);
     border:none;
     outline: none;
     border-radius: 6px;
-    box-shadow:0 0 10px #fffae4;
     font-size:16px;
     color:azure;
     letter-spacing:1px;
@@ -79,8 +80,9 @@ form button{
     margin-top: 20px;
 }
 form button:hover{
+    text-shadow: 0 0 8px #fffae4;
     background: #02020271;
-    box-shadow: #fffae4;
+    box-shadow:0 0 8px #fffae4;
 }
 .field .error-txt{
     font-size: 14.5px;

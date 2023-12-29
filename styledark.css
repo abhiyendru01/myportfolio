@@ -330,7 +330,8 @@ p {
 .navbar .active:focus,
 .navbar li:hover>a {
   background: #1d1d1db5;
-  color: #e1caab;
+  color: #fce8cf;
+  text-shadow: 0 0 6px #fffae4;
 }
 
 .navbar .dropdown ul {
@@ -342,6 +343,7 @@ p {
   padding: 10px 0;
   z-index: 99;
   opacity: 0;
+  color:#fffae4;
   visibility: hidden;
   background: #fffae458;
   box-shadow: 0px 0px 10px #fffae4e2;
@@ -364,7 +366,7 @@ p {
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: #d9c2a3;
+  color: #fff4e7;
 }
 
 .navbar .dropdown:hover>ul {
@@ -400,13 +402,21 @@ p {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  background: #080808;
-  color: #4b4a4a;
+  background: #08080873;
+  backdrop-filter:blur(8px);
+  color: #e8e1bffa;
   font-size: 28px;
   cursor: pointer;
   display: none;
   line-height: 0;
   transition: 0.5s;
+}
+.mobile-nav-toggle:hover {
+  background: #08080873;
+  backdrop-filter:blur(8px);
+  color: #e8e1bffa;
+  text-shadow: 0 0 10px #fffae4;
+
 }
 
 .mobile-nav-toggle.bi-x {
@@ -430,15 +440,24 @@ p {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(49, 49, 49, 0.9);
+  background: rgba(49, 49, 49, 0.236);
   transition: 0.3s;
 }
 
 .navbar-mobile .mobile-nav-toggle {
   position: absolute;
+  color: #fffae4;
   top: 15px;
   right: 15px;
 }
+.navbar-mobile .mobile-nav-toggle:hover {
+  position: absolute;
+  color: #fffae4;
+  text-shadow: 0 0 10px #fffae4;
+  top: 15px;
+  right: 15px;
+}
+
 
 .navbar-mobile ul {
   display: block;
@@ -448,8 +467,10 @@ p {
   bottom: 15px;
   left: 15px;
   padding: 10px 0;
+  border: 1px #eae5cee8;
   border-radius: 10px;
-  background-color: #111111;
+  backdrop-filter: blur(8px);
+  background-color: #11111178;
   overflow-y: auto;
   transition: 0.3s;
 }
@@ -458,13 +479,14 @@ p {
 .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #4b4a4a;
+  color: #ded9c3ec;
 }
 
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: #b8a07e;
+  color: #fff0db;
+  text-shadow:0 0 8px #fffae4;
 }
 
 .navbar-mobile .getstarted,
@@ -480,7 +502,8 @@ p {
   z-index: 99;
   opacity: 1;
   visibility: visible;
-  background: #111111;
+  backdrop-filter: blur(8px);
+  background: #11111186;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 
@@ -499,7 +522,7 @@ p {
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: #b8a07e;
+  color: #ede0ce;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
@@ -1062,7 +1085,7 @@ p {
 
 .php-email-form .loading {
   display: none;
-  background: #fffae44d;
+  background: #2424244d;
   text-align: center;
   padding: 15px;
   margin-bottom: 15px;
@@ -1262,7 +1285,8 @@ blockquote {
 }
 
 #footer .socials-media ul li a:hover {
-  color: #c9af8b;
+  color: #fdeeda;
+  text-shadow: 0 0 8px#fffae4;
   transition: all 0.5s ease-in-out 0s;
 }
 
@@ -1278,6 +1302,7 @@ blockquote {
   position: center;
   padding: 10px 200px;
   font-size: 1.0rem;
+  background: #111111;
   color: #e4ddbbcc;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 0px;
@@ -1291,25 +1316,16 @@ blockquote {
 }
 
 .button:hover {
-  color: rgb(15, 15, 15);
+  background:#e4ddbb;
+  color: #111111;
   border: 2px solid rgba(0, 0, 0, 0);
   box-shadow: 0 0 0px var(--color);
 }
-
-.button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(68, 68, 68);
-  z-index: -1;
-  transform: scale(0);
-  transition: 0.5s;
-  justify-content: center;
-}
 .credits {
+  font-size: 13px;
+}
+.credits:hover {
+  text-shadow: 0 0 8px #fffae4;
   font-size: 13px;
 }
 
@@ -1739,11 +1755,22 @@ blockquote {
   }
 }
 /* Reset default button styles */
-button {
+button{
   padding: 7px 16px;
   border: 2px solid#fffae4;
   border-radius: 20px;
   background-color: #00000049;
+  color: #b7b39e;
+  border:1px solid #c2ba98 ;
+  border-color:2px #fffae4;
+  font-size: 11px;
+  cursor: pointer;
+}
+button:hover{
+  padding: 7px 16px;
+  border: 2px solid#fffae4;
+  border-radius: 20px;
+  background-color: #1a1a1a8d;
   color: #b7b39e;
   border:1px solid #c2ba98 ;
   border-color:2px #fffae4;
