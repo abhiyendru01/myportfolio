@@ -6,6 +6,7 @@ const sendChatBtn = document.querySelector(".chat-input span");
 var contactString = "<div class='social'> <a target='_blank' href='tel:+916283813133'> <div class='socialItem' id='call'><img class='socialItemI' src='images/phone.svg'/><label class='number'></label></label></div> </a> <a href='mailto:rahul.r0644@gmail.com'> <div class='socialItem'><img class='socialItemI' src='images/gmail.svg' alt=''></div> </a> <a target='_blank' href='https://github.com/abhiyendru01'> <div class='socialItem'><img class='socialItemI' src='images/github.svg' alt=''></div> </a> <a target='_blank' href='https://wa.me/916283813133'> <div class='socialItem'><img class='socialItemI' src='images/whatsapp.svg' alt=''>";
 let userName = null; // Variable to store user's name
 const inputInitHeight = chatInput.scrollHeight;
+const messageSound = new Audio('assets/sentmessage.mp3');
 
 const createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
@@ -25,6 +26,9 @@ const handleClearChat = () => {
 const generateResponse = (userMessage) => {
     if (!userMessage) return;
 
+    // Play sound when a message is sent
+    messageSound.play();
+
     chatbox.appendChild(createChatLi(userMessage, "outgoing"));
     chatbox.scrollTo(0, chatbox.scrollHeight);
 
@@ -37,12 +41,16 @@ const generateResponse = (userMessage) => {
             chatbox.removeChild(incomingChatLi); // Remove typing indicator
             let botResponse = getBotResponse(userMessage); // Get bot's response based on user input
 
+            // Play sound when receiving a response
+            messageSound.play();
+
             const responseChatLi = createChatLi(botResponse, "incoming");
             chatbox.appendChild(responseChatLi);
             chatbox.scrollTo(0, chatbox.scrollHeight);
         }, 1000); // Delay for typing effect
     }, 600);
 }
+
 
 const getBotResponse = (userInput) => {
     userInput = userInput.trim().toLowerCase();
@@ -82,6 +90,7 @@ const getBotResponse = (userInput) => {
     }
 }
 
+
 chatInput.addEventListener("input", () => {
     chatInput.style.height = `${inputInitHeight}px`;
     chatInput.style.height = `${chatInput.scrollHeight}px`;
@@ -101,7 +110,20 @@ sendChatBtn.addEventListener("click", () => {
     generateResponse(userMessage);
     chatInput.value = "";
 });
+sendChatBtn.addEventListener("click", () => {
+    const userMessage = chatInput.value.trim();
+    generateResponse(userMessage);
+    chatInput.value = "";
+});
 
+chatInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+        e.preventDefault();
+        const userMessage = chatInput.value.trim();
+        generateResponse(userMessage);
+        chatInput.value = "";
+    }
+});
 closeBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
