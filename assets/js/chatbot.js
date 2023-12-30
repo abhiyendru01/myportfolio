@@ -55,7 +55,7 @@ const generateResponse = (userMessage) => {
 const getBotResponse = (userInput) => {
     userInput = userInput.trim().toLowerCase();
 
-    if (userInput === "hi" || userInput === "hello" || userInput === "hii" || userInput ==="hii rahul") {
+    if (userInput === "hi" || userInput === "hello" || userInput === "hii" || userInput ==="hii rahul" ||userInput ==="hey" ||userInput ==="heyy") {
         return `Hi there! What's your good name?`;
     }else if (userName === null) {
         userName = userInput;
@@ -80,6 +80,9 @@ const getBotResponse = (userInput) => {
 
 }if (userInput ==="education"){
     return `I am currently pursuing  Btech in Computer Science  from Lovely Professional University<br>Passing Year : 2026<br><br><br><br>I've done my high school from Kendriya Vidyalaya,jrc<br>Passing Year:2022`;
+   
+}if (userInput ==="rahul"){
+    return `Yess ,That's Me..!`;
    
 }if (userInput ==="contact"){
     return (contactString);
