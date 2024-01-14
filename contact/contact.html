@@ -1,55 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE-edge">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Rahul's Portfolio</title>
-        <link rel="stylesheet" href="style.css">
-        <link href="logo2.PNG" rel="icon">
-        <link href="logo2.PNG" rel="apple-touch-icon">
-    </head>
-    <body>
-        <div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Rahul's Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/chatbot.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="logo2.PNG" rel="icon">
+    <link href="logo2.PNG" rel="apple-touch-icon">
+</head>
+<body>
+    <div>
         <section class="contact">
-            <h2>Contact Me!</h2>
+            <a href="#" class="back-button" onclick="goBack()"><i class="bi bi-arrow-left"></i></a>
+          <div class="form-container">
+            <h2>Contact Me!</h2><br><br>
+       
             <div>
-
-            <form action="#">
-                <div class="input-box">
-                    <div class="input-field field">
-                        <input type="text" placeholder="Full Name" id="name"
-                        class="item" autocomplete="off">
-                        <div class="error-txt">Full Name can't be blank</div>
+                <form action="#">
+                    <div class="input-box">
+                        <div class="input-field field">
+                            <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off">
+                            <div class="error-txt">Full Name can't be blank</div>
+                        </div>
+                        <div class="input-field field">
+                            <input type="text" placeholder="Email Address" id="email" class="item" autocomplete="off">
+                            <div class="error-txt">Email Address can't be blank</div>
+                        </div>
+                        <div class="input-field field">
+                            <input type="text" placeholder="Phone Number" id="phone" class="item" autocomplete="off">
+                            <div class="error-txt">Phone Number can't be blank</div>
+                        </div>
+                        <div class="input-field field">
+                            <input type="text" placeholder="Subject" id="subject" class="item" autocomplete="off">
+                            <div class="error-txt">Subject can't be blank</div>
+                        </div>
                     </div>
-                    <div class="input-field field">
-                        <input type="text" placeholder="Email Address" id="email"
-                        class="item" autocomplete="off">
-                        <div class="error-txt">Email Address can't be blank</div>
+                    <div class="textarea-field field">
+                        <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" class="item" autocomplete="off"></textarea>
+                        <div class="error-txt">Message can't be blank</div>
                     </div>
-                    <div class="input-field field">
-                        <input type="text" placeholder="Phone Number" id="phone"
-                        class="item" autocomplete="off">
-                        <div class="error-txt">Phone Number can't be blank</div>
-                    </div>
-                    <div class="input-field field">
-                        <input type="text" placeholder="Subject" id="subject"
-                        class="item" autocomplete="off">
-                        <div class="error-txt">Subject can't be blank</div>
-                    </div>
-                </div>
-                <div class="textarea-field field">
-                    <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" class="item" autocomplete="off"></textarea>
-                    <div class="error-txt">Message can't be blank</div>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-            </div>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </section>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="script.js"></script>
-        
-    </body>
+    </div>
+</div>
+<button class="chatbot-toggler">
+    <span class="chat"><i class="bi bi-chat" height="30px" width="40px"></i></span>
+    <span class="material-symbols-outlined"><i class="bi bi-x-lg"></i></span>
+  </button>
+  <div class="chatbot">
+    <header>
+      <h2>Rahul's Chatbot</h2>
+      <span class="close-btn material-symbols-outlined"><i class="bi bi-x-lg"></i></span>
+    </header>
+    <ul class="chatbox">
+      <li class="chat incoming">
+        <span class="profile"><img src="../assets/img/logo4.png" width="30px" height="30px"></span></img>
+        <p>Hii 👋 ,I'm Rahul<br>send <b>'hii'</b> to start a chat</p>
+      </li>
+    </ul>
+    <div class="chat-input">
+      <textarea placeholder="ask me something..." spellcheck="false" required></textarea>
+     <!--   <span id="send-btn" class="capture-btnn">send</span>-->
+      <span id="send-btn" class="btnn"><i class="bi bi-send"></i></span>
+    </div>
+  </div>
+  <script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+<script src="../assets/js/chatbot.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
 </html>

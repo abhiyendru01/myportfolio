@@ -4,19 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>Rahul's Portfolio</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/logo2.png" rel="icon">
-  <link href="assets/img/logo2.PNG" rel="apple-touch-icon">
+  <link href="assets/img/curly2.png" rel="icon">
+  <link href="assets/img/curly2.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i,900,900i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link rel="stylesheet" href="./Preloader/loaderstyle.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="./Preloader/pace.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-bez@1.0.11/src/jquery.bez.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -36,8 +42,47 @@
 </head>
 
 <body>
+  <div id="preloader"></div>
+  <script>
+    var loader = document.getElementById("preloader");
+    
+    // Show the preloader initially
+    loader.style.display = "block";
+  
+    // Set a timeout to hide the preloader after 3 seconds
+    setTimeout(function() {
+      loader.style.display = "none";
+    }, 3000); // 3000 milliseconds = 3 seconds
+  </script>
   <!-- ======= Hero Section ======= -->
-  <header id="header" class="fixed-top ">
+  
+  <!--<div id="preloader">
+    <div class="pop">LOADING</div>
+</div>
+<script>
+
+  paceOptions = {
+  ajax: true,
+  document: true,
+  eventLag: false
+  };
+
+  Pace.on('done', function() {
+  $('.p').delay(5000).animate({top: '30%', opacity: '0'}, 3000, $.bez([0.19,1,0.22,1]));
+
+
+  $('#preloader').delay(1500).animate({top: '-100%'}, 2000, $.bez([0.19,1,0.22,1]));
+
+  TweenMax.from(".title", 2, {
+       delay: 1.8,
+            y: 10,
+            opacity: 0,
+            ease: Expo.easeInOut
+      })
+ });
+
+</script> -->
+ <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
 
       <a href="light.html" class="nav-link scrollto" href="#about"class="logo"><img src="assets/img/logo4.png" alt="" width="55" height=max ></a>
@@ -52,15 +97,17 @@
           <li><a class="nav-link  scrollto" href="portfolio.html">Resume</a></li>
           <li class="dropdown"><a href="#journal"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="https://wiptest.netlify.app/">WebinPost</a></li>
-              <li><a href="https://exploreindia673.netlify.app/">Explore India</a></li>
+              
+              
               <li><a href="https://crossxclass.netlify.app/">Crossclass</a></li>
-              <li><a href="https://coffeedate.netlify.app/">Coffee Date?</a></li>
+              <li><a href="https://exploreindia673.netlify.app/">Explore India</a></li>
+              <li><a href="https://moontoday.netlify.app/">Moon Today</a></li>
+              <li><a href="https://rahulchatbot.netlify.app/">Rahul's Chatbot</a></li>
               <li><a href="https://tictactoetest.netlify.app/">TicTacToe Game</a></li>
               <li><a href="https://voltwave.netlify.app/">Voltwave Electricity</a></li>
-              <li><a href="https://rahulchatbot.netlify.app/">Rahul's Chatbot</a></li>
-              <li><a href="https://weathercast01.netlify.app/">Weather app</a></li>
-              <li><a href="https://moontoday.netlify.app/">Moon Today</a></li>
+              <li><a href="https://wiptest.netlify.app/">WebinPost</a></li>
+              <li><a href="https://liveweather673.vercel.app/">Weather app</a></li>
+              
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="contact/contact.html">Contact</a></li>
@@ -72,19 +119,20 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-
+  <div class="background"></div>
   <div id="hero" class="home">
     <div class="container">
       <div class="hero-content">
         
-        <h1>I'm <span class="typed" data-typed-items="Rahul , Developer, Designer, Photographer"></span></h1>
-        <p> Developer, Designer, Photographer</p>
+        <h1>I'm <span class="typed" data-typed-items="Rahul , Developer, Designer, Filmographer"></span></h1>
+        <p> Developer, Designer, Filmographer</p>
         
         <ul class="list-unstyled list-social">
           <li><a href="https://www.instagram.com/abhiyendru/"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-          <li><a href="https://twitter.com/abhiyendru"><i class="bi bi-twitter"></i></a></li>
           <li><a href="https://www.linkedin.com/in/rahul-raj-81a77124b"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="#"><i class="bi bi-pinterest"></i></a></li>
+          <li><a href="https://twitter.com/abhiyendru"><i class="bi bi-twitter"></i></a></li>
+          
           <li><a href="https://github.com/abhiyendru01"><i class="bi bi-github"></i></a></li>
         </ul>
       </div>
@@ -103,7 +151,7 @@
           <div class="col-lg-4 ">
             <div class="div-img-bg">
               <div class="about-img">
-                <img src="assets/img/me.jpg" class="img-responsive" alt="me">
+                <img src="assets/img/IMG_1215.JPEG.jpg" class="img-responsive" alt="me">
               </div>
             </div>
           </div>
@@ -327,16 +375,14 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
         <div class="row portfolio-container">
 
           <div class="col-lg-4 col-md-2 portfolio-item filter-app">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/6oRzd5LMx5MoRIyhl32Ioi?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fabhiyendru%2Fgul-acoustic%2F"width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" ></iframe>
             <div class="portfolio-info">
-              <h4></h4>
-             
-              
+              <h4></h4> 
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4WmPiyd5ASYdcdmVjEQ6Ex?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fabhiyendru%2Falag-aasman%2F" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <div class="portfolio-info">
               <h4></h4>
 
@@ -346,12 +392,10 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
           </div>
               
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4pqRZKefnjY8ayuJqqYetP?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe style="border-radius:12px" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Fabhiyendru%2Fheather%2F" width="100%" height="142" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             <div class="portfolio-info">
               <h4></h4>
-              
-              
-              
+  
             </div>
           </div>
 
@@ -416,7 +460,7 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
             <div class="col-lg-4 col-md-6">
               <div class="journal-info">
 
-                <a href="https://exploreindia673.netlify.app/"><img src="assets/img/exploreindia.png" class="img-responsive" alt="img"></a>
+                <a href="https://exploreindia673.netlify.app/"><img src="assets/img/exploreindia2.png" class="img-responsive" alt="img"></a>
 
                 <div class="journal-txt">
 
@@ -435,76 +479,63 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
 
     </div><!-- End Journal Section -->
 
-    <!-- ======= Contact Section ======= -->
-    <div id="contact" class="paddsection">
-      <div class="container">
-        <div class="contact-block1">
-          <div class="row">
+   <!-- ======= Contact Section ======= -->
+<div id="contact" class="paddsection">
+  <div class="container">
+    <div class="contact-block1">
+      <div class="row">
 
-            <div class="col-lg-6">
-              <div class="contact-contact">
-
-                <h2 class="mb-30">GET IN TOUCH</h2>
-
-                <ul class="contact-details">
-                  <li><span>Innovaton studio,LPU</span></li>
-                  <li><span>Punjab,India</span></li>
-                  <li><span>+91 6283813133</span></li>
-                  <li><span>abhiyendru@gmail.com</span></li>
-                </ul>
-
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <form action="#" >
-                <div class="row gy-3">
-
-                  <div class="col-lg-6">
-                    <div class="form-group contact-block1">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required style="color: blanchedalmond;">
-                    </div>
-                  </div>
-
-                  <div class="col-lg-6">
-                    <div class="form-group">
-                      <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-                    
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="form-group">
-                      <textarea class="form-control" name="message" placeholder="Message" required>message</textarea>
-                    </div>
-                  </div>
-
-                  <div class="col-lg-12">
-                    <div class="loading"></div>
-                    <div class="error-message"></div>
-                    <div class="sent-message"></div>
-                  </div>
-
-                  
-                  <button id="submit" class="btn btn-defeault btn-send" href="" style="--color:#1e9bff;">
-                    send message
-                  
-                </div>
-                  
-
-                </div>
-              </form>
-            </div>
+        <div class="col-lg-6">
+          <div class="contact-contact">
+            <h2 class="mb-30">GET IN TOUCH</h2>
+            <ul class="contact-details">
+              <li><span>Innovaton studio, LPU</span></li>
+              <li><span>Punjab, India</span></li>
+              <li><span>+91 6283813133</span></li>
+              <li><span>abhiyendru@gmail.com</span></li>
+            </ul>
           </div>
         </div>
+
+        <div class="col-lg-6">
+          <form id="contactForm" action="#" method="POST">
+            <div class="row gy-3">
+              <div class="col-lg-6">
+                <div class="form-group contact-block1">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+              </div>
+
+              <div class="col-lg-6">
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <textarea class="form-control" name="message" id="message" placeholder="Message" required></textarea>
+                </div>
+              </div>
+
+              <div class="col-lg-12">
+                <button type="submit" class="btn btn-defeault btn-send" style="width: 100%;">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </div><!-- End Contact Section -->
+    </div>
+  </div>
+</div>
+<!-- End Contact Section -->
+
 
   </main><!-- End #main -->
 <script>
@@ -517,7 +548,7 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
         const submitBtn = document.getElementById("submit");
 
         function sendEmail() {
-            const bodyMessage = `Name: ${name.value}\nEmail: ${email.value}\nSubject: ${subject.value}\nMessage: ${message.value}`;
+            const bodyMessage = `\nName: ${fullName.value} <br>\nEmail: ${email.value}<br>\nSubject: ${subject.value}<br>\nMessage: ${message.value}`;
 
             // Assuming Email.send() is correctly implemented for sending emails
             Email.send({
@@ -530,12 +561,33 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
                 message: message.value,
                 Body: bodyMessage
             }).then(message => {
-                if (message === "OK") {
-                    // Adjust this part according to your requirements
-                    alert("Email sent successfully!");
-                } else {
+                if (message === "OK"){
+            Swal.fire({
+                icon:"success",
+                title: "Message Sent Successfully!",
+                width: 400,
+                padding: "3em",
+                color: "#fffae4",
+                confirmButtonColor: "green",
+                background: "#111111d8",
+                backdrop: `
+                #09090946
+                 
+                `
+              });
+            
+        } else {
                     // Handle error scenario if needed
-                    alert("Failed to send email. Please try again.");
+                    Swal.fire({
+  icon: "error",
+  title: "Oops...",
+  text: "Something went wrong!",
+  width: 400,
+  color: "#fffae4",
+  background: "#111111d2",
+  footer: '<a href="../contact/contact.html">Check the other page?</a>',
+  confirmButtonColor:"red",
+});
                 }
             });
         }
@@ -567,7 +619,6 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
             }
         });
     });
-
 </script>
   <!-- ======= Footer ======= -->
   <div id="footer" class="text-center">
@@ -616,6 +667,7 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
  <!-- <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-chat"></i></a>-->
 
   <!-- Vendor JS Files -->
+  <script src="assets/js/bg.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
@@ -624,30 +676,7 @@ When I'm not lost in lines of code, you'll find me exploring new coffee shops, g
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://smtpjs.com/v3/smtp.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="script.js"></script>
-  <script>
-    function sendEmail(){
-      Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "abhiyendru@gmail.com",
-    Password : "DD0AB4A048BB1B4B1A316F4FEF3C76E0C276",
-    To : 'rahul.r0644@website.com',
-    From : document.getElementById("email").value,
-    Subject : subject.value,
-    Body : bodymessage
-}).then(
-  message => {
-    if(mesage == "OK"){
-      Swal.fire({
-        title: "Success",
-        text: "Message sent successfully!",
-        icon: "success"
-      });
-    }
-  }
-);
-    }
-  </script>
+  <script src="./Preloader/pace.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>

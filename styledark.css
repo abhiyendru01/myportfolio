@@ -1,9 +1,7 @@
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-  background:"assets/img/home-bg.JPG";
   color: #fffae4;
   font-family: "Poppins", helvetica;
   font-size: 15px;
@@ -24,6 +22,20 @@ h5,
 h6 {
   margin: 0;
 }
+.background {
+  /* Set your background image */
+  background-image: url('assets/img/bg.mp4');
+  /* Set background properties */
+  background-size: cover;
+  background-attachment: fixed; /* This makes the background fixed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the background is behind other content */
+}
+
 .glow-text {
   font-size: 48px; /* Adjust the font size as needed */
   text-align: center;
@@ -94,8 +106,9 @@ p {
 
 .btn:hover,
 .btn:focus {
-  background: #c6c6c6;
-  color: #FFFAE4;
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) ease-in-out;
+  background: #cdc9b9cb;
+  color: #333;
 }
 
 .padDiv {
@@ -128,11 +141,15 @@ p {
 }
 
 .form-control:focus {
+  color: #111111;
   box-shadow: none;
   outline: 0 none;
 }
 .container .form-control::placeholder{
   color: #fffae4;
+}
+.container .form-control::placeholder::after{
+  color: #333;
 }
 .paddsection {
   padding-top: 90px;
@@ -193,53 +210,13 @@ p {
   visibility: visible;
   opacity: 1;
 }
---------------------------------------------------------------*/
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #151515;
-}
 
-#preloader:before {
-  content: "";
-  position: fixed;
-  top: calc(50% - 0px);
-  left: calc(50% - 30px);
-  border: 6px solid #ffc451;
-  border-top-color: #151515;
-  border-bottom-color: #151515;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: animate-preloader 1s linear infinite;
-}
-
-@keyframes animate-preloader {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/*--------------------------------------------------------------
-# Disable aos animation delay on mobile devices
---------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
 }
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+
 #header {
   transition: all 0.5s;
   z-index: 997;
@@ -280,18 +257,13 @@ p {
   }
 }
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/**
-* Desktop Navigation 
-*/
 .navbar {
+  z-index: 30;
   padding: 0;
 }
 
 .navbar ul {
-  background: #1d1d1d97;
+  background: #12121297;
   margin: 0;
   padding: 0;
   display: flex;
@@ -345,8 +317,9 @@ p {
   opacity: 0;
   color:#fffae4;
   visibility: hidden;
-  background: #fffae458;
-  box-shadow: 0px 0px 10px #fffae4e2;
+  border-radius: 4px;
+  background: #111111d2;
+  box-shadow: 0px 0px 6px #fffae4e2;
   transition: 0.3s;
 }
 
@@ -398,11 +371,9 @@ p {
   }
 }
 
-/**
-* Mobile Navigation 
-*/
 .mobile-nav-toggle {
-  background: #08080873;
+  background: #17171749;
+  border-radius: 2px;
   backdrop-filter:blur(8px);
   color: #e8e1bffa;
   font-size: 28px;
@@ -412,7 +383,8 @@ p {
   transition: 0.5s;
 }
 .mobile-nav-toggle:hover {
-  background: #08080873;
+  border-radius: 2px;
+  background: #080808c2;
   backdrop-filter:blur(8px);
   color: #e8e1bffa;
   text-shadow: 0 0 10px #fffae4;
@@ -440,7 +412,7 @@ p {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(49, 49, 49, 0.236);
+  background: rgba(18, 18, 18, 0.751);
   transition: 0.3s;
 }
 
@@ -470,7 +442,7 @@ p {
   border: 1px #eae5cee8;
   border-radius: 10px;
   backdrop-filter: blur(8px);
-  background-color: #11111178;
+  background-color: #111111a6;
   overflow-y: auto;
   transition: 0.3s;
 }
@@ -503,7 +475,7 @@ p {
   opacity: 1;
   visibility: visible;
   backdrop-filter: blur(8px);
-  background: #11111186;
+  background: #22222286;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 
@@ -529,11 +501,8 @@ p {
   display: block;
 }
 
-/*--------------------------------------------------------------
-# Hero
---------------------------------------------------------------*/
 #hero {
-  background: url("assets/img/home-bg.JPG") repeat scroll center center/cover;
+  background: url("assets/img/home-bg.jpg") repeat scroll center center/cover;
   height: 100vh;
   width: 100%;
 }
@@ -575,9 +544,6 @@ p {
   font-size: 15px;
 }
 
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
 .breadcrumbs {
   padding: 120px 0 0 0;
   background-color: #111111;
@@ -637,9 +603,6 @@ p {
   }
 }
 
-/*-----------------------------------------------------------------------------------*/
-/*  About
-/*-----------------------------------------------------------------------------------*/
 #about {
   width: 100%;
   height: auto;
@@ -669,7 +632,6 @@ p {
   font-size: 28px;
   text-align: left;
 }
-
 #about .about-descr .separator {
   max-width: 80%;
   color: #ded7bab8;
@@ -866,7 +828,8 @@ p {
   bottom: 0;
   z-index: 3;
   transition: all ease-in-out 0.3s;
-  background:#1111116d;
+  background:#0d0d0d76;
+  backdrop-filter: blur(0.4px);
   padding: 15px;
 }
 
@@ -1252,12 +1215,11 @@ blockquote {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #111111;
+  background-color: #111111 ;
   color: #fffae4;
   padding-top: 50px;
   padding-bottom: 50px;
 }
-
 #footer .socials-media {
   width: 100%;
 }
@@ -1300,10 +1262,10 @@ blockquote {
 }
 .button {
   position: center;
-  padding: 10px 200px;
-  font-size: 1.0rem;
-  background: #111111;
-  color: #e4ddbbcc;
+  padding: 20px 200px;
+  font-size: 10px;
+  background: #292929;
+  color: #fffae4;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 0px;
   text-shadow: 0;
@@ -1311,15 +1273,15 @@ blockquote {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   justify-content: center;
-  transition: 0.5s;
   z-index: 1;
 }
 
 .button:hover {
-  background:#e4ddbb;
-  color: #111111;
+  background:#d6d1bce1;
+  color: #292929;
+  font-size: 10px;
   border: 2px solid rgba(0, 0, 0, 0);
-  box-shadow: 0 0 0px var(--color);
+  box-shadow: 0 0 3px #fffae4;
 }
 .credits {
   font-size: 13px;
@@ -1329,15 +1291,6 @@ blockquote {
   font-size: 13px;
 }
 
-/** Width between 1200x to 0
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
-/** Width between 992px to 1199px
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
-/** Width between 768px to 991px
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
 @media (min-width: 768px) and (max-width: 991px) {
 
   /* Navbar */
@@ -1401,6 +1354,7 @@ blockquote {
   }
 
   /* journal */
+
   #journal .journal-block .journal-info {
     margin-bottom: 30px;
   }
@@ -1419,9 +1373,6 @@ blockquote {
   }
 }
 
-/** Width between 767px to 0
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
 @media (max-width: 767px) {
 
   /* Navbar */
@@ -1502,9 +1453,6 @@ blockquote {
   }
 }
 
-/** Width between 600px to 0
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
 @media (max-width: 600px) {
 
   /* Navbar */
@@ -1585,9 +1533,6 @@ blockquote {
   }
 }
 
-/** Width between 480px to 0
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
 @media (max-width: 480px) {
 
   /* Navbar */
@@ -1666,10 +1611,6 @@ blockquote {
     display: inline-block;
   }
 }
-
-/** Width between 320px to 0
- *  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- */
 @media (max-width: 320px) {
 
   /* Navbar */
@@ -1755,7 +1696,8 @@ blockquote {
   }
 }
 /* Reset default button styles */
-button{
+
+.capture-btn{
   padding: 7px 16px;
   border: 2px solid#fffae4;
   border-radius: 20px;
@@ -1766,30 +1708,18 @@ button{
   font-size: 11px;
   cursor: pointer;
 }
-button:hover{
+.capture-btn:hover{
   padding: 7px 16px;
-  border: 2px solid#fffae4;
+  border: 1px solid#fffae4;
   border-radius: 20px;
-  background-color: #1a1a1a8d;
-  color: #b7b39e;
-  border:1px solid #c2ba98 ;
-  border-color:2px #fffae4;
+  background-color: #00000049;
+  color: #fffae4;
+  text-shadow: 0 0 5px #fffae4;
+  border-color:1px #fffae4;
   font-size: 11px;
   cursor: pointer;
 }
 
-/* Style for the capture button */
-.capture-btn {
-  background-color: #11111146808;
-  ::-webkit-outer-spin-button 
-  
-
-}
-
 /* Hover effect */
-.capture-btn:hover {
-  background-color: #fffae420;
-  color: #fffae4;
-  box-shadow:0 0 10px #fffae4; 
-}
+
 

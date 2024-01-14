@@ -1,42 +1,51 @@
 @import url();
-*{
-    margin:0;
+* {
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'poppins',sans-serif;
-} 
-body{
-    display:flex;
+    font-family: 'Poppins', Helvetica;
+}
+
+body {
+    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url(bg_1.JPG)repeat scroll center center/cover;
+    background: url('bg_1.JPG') repeat scroll center center/cover;
     background-blend-mode: overlay;
-
+    /* Add any other body styles */
 }
-.contact h2{
-    font-size: 40px;
-    color: #fffae4;
-    text-shadow: #fffae4;
+
+.contact {
     text-align: center;
+    color: #fffae4;
+    /* Add any other contact section styles */
+}
+
+.contact h2 {
+    font-size: 40px;
+    text-shadow: 1px 1px 2px #000;
     margin-bottom: 10px;
 }
-.contact form{
+
+.contact form {
     width: 600px;
-    text-align: center;
+    margin: 0 auto;
 }
-.form input-box{
+
+.input-box {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
-.input-box .input-field{
-    
+
+.input-field {
+    margin-bottom: 20px;
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
 }
-.field.error .item{
-    border-color: red;
-    box-shadow:0 0 10px red;
-}
-.field .item{
+
+.item {
     width: 100%;
     padding: 18px;
     background: rgba(45, 45, 45, 0.615);
@@ -46,63 +55,163 @@ body{
     color: #fffae4;
     outline: none;
     border-radius: 6px;
-    margin:12px 0;
 }
-.field .item:hover{
-    width: 100%;
-    padding: 18px;
+
+.item:hover {
     background: rgba(42, 42, 42, 0.475);
     border: 2px solid #020202;
-    font-size: 16px;
+    box-shadow: 0 0 8px #fffae4;
     color: #fbfbfb;
+}
+
+.item::placeholder {
+    color: #c6c5c0b4;
+}
+
+.textarea-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.textarea-field textarea {
+    width: 100%;
+    padding: 18px;
+    background: rgba(45, 45, 45, 0.615);
+    backdrop-filter: blur(1px);
+    border: 2px solid #020202;
+    font-size: 16px;
+    color: #fffae4;
     outline: none;
     border-radius: 6px;
-    margin:12px 0;
+    resize: none;
 }
-.field .item::placeholder{
-    color:#c6c5c0b4;
+
+.textarea-field textarea:hover {
+    background: rgba(42, 42, 42, 0.475);
+    border: 2px solid #020202;
+    color: #fbfbfb;
 }
-form .textarea-field .item{
-    resize:none;
+/* ... previous CSS ... */
+
+.form-container {
+    width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    backdrop-filter: blur(2px);
+    background: linear-gradient(#121212c3 , #313131ab) ; /* Adjust background color and opacity */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.629); /* Adjust box shadow */
 }
-form button{
-    padding: 12px 32px;
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    margin-bottom: 20px;
+}
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 13px;
+    padding: 8px 16px;
+    background-color: #101010ad;
+    backdrop-filter: blur(3px); /* Adjust button background color */
+    color: #fffae4; /* Adjust button text color */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #101010;
+    box-shadow: 0 0 4px #fffae4d2; /* Adjust hover background color */
+}
+
+/* ... textarea-field styles ... */
+
+button {
+    padding: 14px 32px;
     background: #02020273;
     backdrop-filter: blur(2px);
-    border:none;
+    border: none;
     outline: none;
     border-radius: 6px;
-    font-size:16px;
-    color:azure;
-    letter-spacing:1px;
+    font-size: 14px;
+    color: #fffae4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     font-weight: 600;
     cursor: pointer;
     margin-top: 20px;
 }
-form button:hover{
+
+button:hover {
     text-shadow: 0 0 8px #fffae4;
     background: #02020271;
-    box-shadow:0 0 8px #fffae4;
+    box-shadow: 0 0 8px #fffae4;
 }
-.field .error-txt{
+
+.error-txt {
     font-size: 14.5px;
     color: red;
     text-align: left;
     margin: -5px 0 10px;
-    text-shadow: 10px #020202;
+    text-shadow: 10px red;
     display: none;
 }
+.chatbot-toggler {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  outline: none;
+  border: none;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  backdrop-filter: blur(9px);
+  background: #22222297;
+  transition: all 0.2s ease;
+}
+body.show-chatbot .chatbot-toggler {
+  text-shadow: 0 0 10px #fffae4;
+}
+.chatbot-toggler:hover{
+  text-shadow: 0 0 8px #fffae4;
+}
+.chatbot-toggler span {
+  color: #fff;
+  font-size: 20px;
+size: 30px;
+  position: absolute;
+}
+.chatbot-toggler span:last-child,
+body.show-chatbot .chatbot-toggler span:first-child  {
+  opacity: 0;
+}
+body.show-chatbot .chatbot-toggler span:last-child {
+  opacity: 1;
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
     .contact h2 {
-        font-size: 30px;
+        font-size: 26px;
     }
     
     .contact form {
+        display: flex;
         width: 90%;
         padding: 0 20px;
     }
 
     .form .input-box {
+        width: 90%;
         flex-direction: column;
     }
 
@@ -118,8 +227,30 @@ form button:hover{
         padding: 10px 26px;
         font-size: 14px;
     }
+    .input-field {
+        width: 98%;
+        margin-bottom: 10px;
+    }
 
-    .field .error-txt {
-        font-size: 13px;
+    .item,
+    .textarea-field textarea {
+        width: 90%;
+        font-size: 14px;
+        padding: 10px;
+    }
+    .back-button {
+        display: none;
+    }
+    .chatbot-toggler {
+        display: none;
+      }
+    .form-container{
+        background-color: #000000a4;
+        width: 90%;
+        height:90%
     }
 }
+.v{
+    color: #090909;
+}
+

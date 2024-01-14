@@ -19,12 +19,38 @@ function sendEmail(){
       message =>{
         if(message =="OK"){
             Swal.fire({
-                imageUrl: "message.png",
-                imageHeight: 200,
-                imagewidth:200,
-                imageAlt: "square image",
-                
+                icon:"success",
+                title: "Message Sent Successfully!",
+                width: 400,
+                padding: "3em",
+                color: "#fffae4",
+                confirmButtonColor: "green",
+                background: "#111111d2",
+                backdrop: `
+                #09090946
+                  url("../assets/img/icy2.gif")
+                  left top
+                  no-repeat
+                `
               });
+            
+        } else {
+            // Handle error scenario if needed
+            Swal.fire({
+                icon:"success",
+                title: "Message Sent Successfully!",
+                width: 400,
+                padding: "3em",
+                color: "#fffae4",
+                confirmButtonColor: "green",
+                background: "#111111d2",
+                backdrop: `
+                #09090946
+                  url("../assets/img/icy2.gif")
+                  left top
+                  no-repeat
+                `
+});
         }
       }
     );
