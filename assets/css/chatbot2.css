@@ -252,7 +252,7 @@ span#send-btn:hover{
   
   /* Hover effect */
   .capture-btnn:hover {
-    background-color: #fff20;
+    background-color: none;
     color: #23211d;
     box-shadow:0 0 10px #fff; 
   }

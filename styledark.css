@@ -35,11 +35,91 @@ h6 {
   height: 100%;
   z-index: -1; /* Ensure the background is behind other content */
 }
+.bn5 {
+  display:flex;
+outline: none;
+padding: 7px 16px;
+border: 2px solid#fffae4;
+  border-radius: 20px;
+  background-color: #00000049;
+  color: #b7b39e;
+  font-size: 11px;
+  border:1px solid #c2ba98 ;
+  border-color:2px #fffae4;
+cursor: pointer;
+position: relative;
+z-index: 0;
+}
 
+.bn5:before {
+content: "";
+background: linear-gradient(
+  45deg,
+  #fffae4,
+  #fff4c6,
+  #d8d1af,
+  #afa783,
+  orange,
+  #ffec96,
+  #b4a876,
+  #f3f3f3,
+  #606060
+);
+position: absolute;
+top: -2px;
+left: -2px;
+background-size: 400%;
+z-index: -1;
+filter: blur(5px);
+width: calc(100% + 4px);
+height: calc(100% + 4px);
+animation: glowingbn5 20s linear infinite;
+opacity: 0;
+transition: opacity 0.3s ease-in-out;
+border-radius: 10px;
+}
+
+@keyframes glowingbn5 {
+0% {
+  background-position: 0 0;
+}
+50% {
+  background-position: 400% 0;
+}
+100% {
+  background-position: 0 0;
+}
+}
+
+.bn5:active {
+color: #fffae4;
+}
+
+.bn5:active:after {
+background: transparent;
+}
+
+.bn5:hover:before {
+opacity: 1;
+}
+
+.bn5:after {
+  text-shadow: 0 0 3px #fffae4;
+z-index: -1;
+font-size: 11px;
+content: "";
+position: absolute;
+width: 100%;
+height: 100%;
+background: #111111f8;
+left: 0;
+top: 0;
+border-radius: 20px;
+}
 .glow-text {
   font-size: 48px; /* Adjust the font size as needed */
   text-align: center;
-  color: #fff; /* Text color */
+  color: #fffae4; /* Text color */
   text-shadow: 0 0 10px #353534, 0 0 20px #323232, 0 0 30px rgb(111, 111, 109); /* Define multiple shadows to create the glow effect */
   animation: glow-animation 1s infinite alternate; /* Apply an animation to create a pulsating effect */
 }
@@ -148,7 +228,7 @@ p {
 .container .form-control::placeholder{
   color: #fffae4;
 }
-.container .form-control::placeholder::after{
+.container .form-control::placeholder:hover{
   color: #333;
 }
 .paddsection {
@@ -997,7 +1077,9 @@ p {
 # Journal
 --------------------------------------------------------------*/
 #contact {
-  background-color: #151515;
+ background: #161616;
+ background-size: cover;
+ /* background-color: #151515;*/
   height: auto;
   width: 100%;
 }
@@ -1214,7 +1296,9 @@ blockquote {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
+
 #footer {
+  
   background-color: #111111 ;
   color: #fffae4;
   padding-top: 50px;

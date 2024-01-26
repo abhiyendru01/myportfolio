@@ -152,7 +152,6 @@ button:hover {
     background: #02020271;
     box-shadow: 0 0 8px #fffae4;
 }
-
 .error-txt {
     font-size: 14.5px;
     color: red;
@@ -253,4 +252,6 @@ body.show-chatbot .chatbot-toggler span:last-child {
 .v{
     color: #090909;
 }
+
+
 
