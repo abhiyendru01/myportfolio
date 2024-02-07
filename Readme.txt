@@ -1,5 +1,4 @@
 
-Template Name: Rahul's PortFolio
-Author: Rahul R
+my portfolio website
 github: https://github.com/abhiyendru01
 website:-https://abhiyendru.online
